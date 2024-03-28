@@ -8,6 +8,7 @@ namespace Arrays
 {
     public static class ArrayMethods
     {
+        //20.Введение в массивы
         public static double GetMaxScore(double[] scores)
         {
             double maxScore = 0;
@@ -37,5 +38,38 @@ namespace Arrays
             }
             return count;
         }
+
+        //21.Сортировка массива
+        public static int[] SelectionSort(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int indexOfMaxElement = i;
+                for (int j = i; j < array.Length; j++)
+                {
+                    if (array[j] > array[indexOfMaxElement])
+                    { 
+                        indexOfMaxElement = j;
+                    }
+                }
+                if (indexOfMaxElement != i)
+                {
+                    int tmp = array[indexOfMaxElement];
+                    array[indexOfMaxElement] = array[i];
+                    array[i] = tmp;
+                }
+            }
+            return array;
+        }
+        public static void Print(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]} ");
+            }
+            Console.WriteLine();
+        }
+      
+
     }
 }

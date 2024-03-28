@@ -17,3 +17,19 @@ Console.WriteLine();
 double[] results = new double[7] {1234, 2345, 3245, 2456, 1576, 1000, 2200};
 int numberOfUnderachievingClerks = ArrayMethods.CountnUnderachievingClerks(results, 2000);
 Console.WriteLine($"Количество сотрудников, не выполнивших план - {numberOfUnderachievingClerks}");
+
+int[] numberOfOrders = GenerateRandomIntArray(10, 0, 50);
+numberOfOrders = ArrayMethods.SelectionSort(numberOfOrders);
+ArrayMethods.Print(numberOfOrders);
+
+
+int[] GenerateRandomIntArray(int length, int min, int max)
+{
+    int[] array = new int[length];
+    Random rand = new Random();
+    for (int i = 0; i < length; i++)
+    {
+        array[i] = rand.Next(min, max + 1);
+    }
+    return array;
+}
