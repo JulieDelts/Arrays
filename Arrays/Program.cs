@@ -22,6 +22,10 @@ int[] numberOfOrders = GenerateRandomIntArray(10, 0, 50);
 numberOfOrders = ArrayMethods.SelectionSort(numberOfOrders);
 ArrayMethods.Print(numberOfOrders);
 
+int[,] films = new int[4, 3] { { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
+ArrayMethods.Print(films);  
+int[] sum = ArrayMethods.CalculateFilmViewsPerMonth(films);
+ArrayMethods.Print(sum);
 
 int[] GenerateRandomIntArray(int length, int min, int max)
 {

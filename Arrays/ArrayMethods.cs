@@ -61,6 +61,22 @@ namespace Arrays
             }
             return array;
         }
+        //22.Многомерные массивы
+        public static int[] CalculateFilmViewsPerMonth(int[,] array)
+        { 
+            int numberOfMovies = array.GetLength(1);
+            int numberOfDays = array.GetLength(0);
+            int [] result = new int[numberOfMovies];
+            for (int i = 0; i < numberOfMovies; i++)
+            {
+                for (int j = 0; j < numberOfDays; j++)
+                {
+                    result[i] += array[j,i];
+                }
+            }
+            return result;
+        }
+
         public static void Print(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
@@ -69,7 +85,26 @@ namespace Arrays
             }
             Console.WriteLine();
         }
-      
+        public static void Print(double[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]} ");
+            }
+            Console.WriteLine();
+        }
+        public static void Print(int[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    Console.Write($"{array[i,j]} ");
+                }
+                Console.WriteLine();
+            }
+        }
+  
 
     }
 }
